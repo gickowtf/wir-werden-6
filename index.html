@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff4fa3">
+  <title>Lilith & Jonas werden 6!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="pixel-sky" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge">🎀 BARBIE × MINECRAFT ⛏️</div>
+      <h1>
+        <span>Lilith &amp; Jonas</span>
+        <strong>WERDEN 6!</strong>
+      </h1>
+      <p class="hero-sub">Kostümparty • Fotobox • Schatzsuche</p>
+      <a class="cta primary" href="#party">Party-Infos ansehen ↓</a>
+    </div>
+  </header>
+
+  <main id="party">
+    <section class="cards info-grid">
+      <article class="card pink">
+        <div class="icon">📅</div>
+        <h2>Wann?</h2>
+        <p><strong>DATUM EINFÜGEN</strong><br>UHRZEIT EINFÜGEN</p>
+      </article>
+
+      <article class="card green">
+        <div class="icon">📍</div>
+        <h2>Wo?</h2>
+        <p>Bei uns zuhause<br><small>Die Adresse steht auf der Einladung.</small></p>
+      </article>
+    </section>
+
+    <section class="split-section costume">
+      <div class="section-copy">
+        <span class="eyebrow">👑 Kostümparty</span>
+        <h2>Zieh an, worauf du Lust hast!</h2>
+        <p>Komm gerne verkleidet – ob Barbie, Minecraft, Superheld, Tier, Prinzessin oder ganz etwas anderes.</p>
+        <div class="notice">
+          <strong>Kein Kostüm? Kein Problem!</strong>
+          <span>Wir haben noch ein paar Kostüme und Accessoires für euch bereitliegen. ✨</span>
+        </div>
+      </div>
+      <div class="pixel-art" aria-label="Dekoration">
+        <div class="block pink-block">❤</div>
+        <div class="block green-block">☘</div>
+        <div class="block black-block">▦</div>
+        <div class="block gold-block">★</div>
+      </div>
+    </section>
+
+    <section class="events">
+      <span class="eyebrow">Das erwartet euch</span>
+      <h2>Unsere Party-Highlights</h2>
+      <div class="event-grid">
+        <article class="event-card">
+          <div class="event-emoji">💎</div>
+          <h3>Schatzsuche</h3>
+          <p>Gemeinsam Hinweise knacken und den verborgenen Partyschatz finden.</p>
+        </article>
+        <article class="event-card">
+          <div class="event-emoji">📸</div>
+          <h3>Fotobox</h3>
+          <p>Mit lustigen Accessoires Erinnerungsfotos von der Party machen.</p>
+        </article>
+        <article class="event-card">
+          <div class="event-emoji">🎂</div>
+          <h3>Kuchen &amp; Spielen</h3>
+          <p>Natürlich bleibt auch genug Zeit zum Naschen, Toben und freien Spielen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wishlist">
+      <div>
+        <span class="eyebrow">🎁 Geschenkideen</span>
+        <h2 id="wishlist-title">Du suchst eine Idee?</h2>
+        <p id="wishlist-text">Hier findest du die passende Wunschliste zum Geburtstagskind.</p>
+      </div>
+
+      <div id="wishlist-jonas" class="wishlist-person" hidden>
+        <div class="wishlist-name">⛏️ Jonas</div>
+        <a class="cta wishlist-btn"
+           href="https://www.amazon.de/"
+           target="_blank"
+           rel="noopener noreferrer">
+          🎁 Jonas' Wunschliste öffnen
+        </a>
+      </div>
+
+      <div id="wishlist-lilith" class="wishlist-person" hidden>
+        <div class="wishlist-name">🎀 Lilith</div>
+        <a class="cta wishlist-btn"
+           href="https://www.amazon.de/"
+           target="_blank"
+           rel="noopener noreferrer">
+          🎁 Liliths Wunschliste öffnen
+        </a>
+      </div>
+
+      <div id="wishlist-fallback" class="wishlist-fallback">
+        <p><strong>Von wem wurdest du eingeladen?</strong></p>
+        <div class="wishlist-choice">
+          <a class="cta mini green-choice" href="?kind=jonas">Von Jonas</a>
+          <a class="cta mini pink-choice" href="?kind=lilith">Von Lilith</a>
+        </div>
+      </div>
+
+      <p class="tiny">So bekommt jedes eingeladene Kind nur die Wunschliste des Geburtstagskindes angezeigt, von dem es eingeladen wurde.</p>
+    </section>
+
+    <section class="photo-note">
+      <span class="eyebrow">📸 Zur Fotobox</span>
+      <h2>Ein kleiner Hinweis für die Eltern</h2>
+      <p>Auf der Party möchten wir eine Fotobox aufstellen. Die Einverständniserklärung dazu findet ihr auf der Einladung.</p>
+    </section>
+
+    <section class="rsvp">
+      <div class="creeper" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div>
+        <span class="eyebrow">Wir freuen uns auf dich!</span>
+        <h2>Bist du dabei? 🎉</h2>
+        <p>Bitte gebt uns bis <strong>DATUM EINFÜGEN</strong> Bescheid.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with 🎀 + ⛏️ für einen ziemlich besonderen 6. Geburtstag.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const kind = (params.get("kind") || "").toLowerCase();
+
+    const jonas = document.getElementById("wishlist-jonas");
+    const lilith = document.getElementById("wishlist-lilith");
+    const fallback = document.getElementById("wishlist-fallback");
+    const title = document.getElementById("wishlist-title");
+    const text = document.getElementById("wishlist-text");
+
+    if (kind === "jonas") {
+      jonas.hidden = false;
+      fallback.hidden = true;
+      title.textContent = "Geschenkideen für Jonas";
+      text.textContent = "Du wurdest von Jonas eingeladen? Dann findest du hier seine Wunschliste.";
+    } else if (kind === "lilith") {
+      lilith.hidden = false;
+      fallback.hidden = true;
+      title.textContent = "Geschenkideen für Lilith";
+      text.textContent = "Du wurdest von Lilith eingeladen? Dann findest du hier ihre Wunschliste.";
+    }
+  </script>
+
+</body>
+</html>

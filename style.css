@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Press+Start+2P&display=swap');
+
+:root{
+  --pink:#ff4fa3;
+  --pink-soft:#ffd7ec;
+  --hot-pink:#ff2e93;
+  --green:#4fbd43;
+  --green-dark:#237b2b;
+  --lime:#a8df63;
+  --cream:#fff9f3;
+  --ink:#292333;
+  --white:#fff;
+  --shadow:0 14px 35px rgba(70,40,70,.16);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Fredoka",system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(90deg,rgba(255,79,163,.06) 1px,transparent 1px),
+    linear-gradient(rgba(79,189,67,.06) 1px,transparent 1px),
+    var(--cream);
+  background-size:22px 22px;
+}
+
+.hero{
+  min-height:88vh;
+  display:grid;
+  place-items:center;
+  padding:48px 20px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 20%,#ffc9e5 0 16%,transparent 17%),
+    radial-gradient(circle at 85% 30%,#bde889 0 15%,transparent 16%),
+    linear-gradient(135deg,#ffebf6 0 49%,#dff5be 50% 100%);
+  border-bottom:12px solid var(--ink);
+}
+
+.hero:before,.hero:after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  border:10px solid var(--ink);
+  transform:rotate(8deg);
+  opacity:.08;
+}
+.hero:before{left:-55px;bottom:55px}
+.hero:after{right:-45px;top:55px;transform:rotate(-13deg)}
+
+.hero-inner{
+  max-width:900px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.badge,.eyebrow{
+  display:inline-block;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+}
+
+.badge{
+  padding:12px 18px;
+  background:var(--white);
+  border:4px solid var(--ink);
+  box-shadow:7px 7px 0 var(--ink);
+  transform:rotate(-1deg);
+}
+
+h1{
+  margin:28px 0 10px;
+  line-height:.95;
+}
+h1 span{
+  display:block;
+  font-size:clamp(2.8rem,8vw,6.8rem);
+  color:var(--hot-pink);
+  text-shadow:5px 5px 0 #fff;
+}
+h1 strong{
+  display:block;
+  margin-top:16px;
+  font-family:"Press Start 2P",monospace;
+  font-size:clamp(1.45rem,4.5vw,3.5rem);
+  color:var(--green-dark);
+  line-height:1.25;
+}
+
+.hero-sub{
+  font-size:clamp(1.1rem,3vw,1.6rem);
+  font-weight:600;
+  margin:24px 0;
+}
+
+.cta{
+  display:inline-block;
+  padding:16px 24px;
+  text-decoration:none;
+  font-weight:700;
+  border:4px solid var(--ink);
+  box-shadow:6px 6px 0 var(--ink);
+  transition:.16s ease;
+}
+.cta:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.primary{background:var(--pink);color:white}
+
+main{
+  width:min(1080px,calc(100% - 32px));
+  margin:0 auto;
+  padding:44px 0 70px;
+}
+
+section{margin:50px 0}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.card,.event-card,.wishlist,.photo-note,.rsvp,.split-section{
+  background:white;
+  border:4px solid var(--ink);
+  box-shadow:var(--shadow);
+}
+
+.card{
+  padding:30px;
+  text-align:center;
+}
+.card.pink{border-top:14px solid var(--pink)}
+.card.green{border-top:14px solid var(--green)}
+.icon,.event-emoji{font-size:2.4rem}
+.card h2,.event-card h3{margin:.45rem 0}
+
+.split-section{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:30px;
+  padding:36px;
+  background:linear-gradient(110deg,#fff 0 65%,#f1ffd9 65% 100%);
+}
+
+.eyebrow{color:var(--hot-pink);font-size:.85rem}
+section h2{font-size:clamp(2rem,5vw,3rem);margin:.4rem 0 1rem}
+section p{font-size:1.08rem;line-height:1.55}
+
+.notice{
+  margin-top:22px;
+  padding:18px;
+  background:var(--pink-soft);
+  border-left:8px solid var(--pink);
+}
+.notice strong,.notice span{display:block}
+.notice strong{font-size:1.25rem;margin-bottom:4px}
+
+.pixel-art{
+  display:grid;
+  grid-template-columns:repeat(2,95px);
+  justify-content:center;
+  align-content:center;
+  gap:10px;
+}
+.block{
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:2.3rem;
+  border:5px solid var(--ink);
+  box-shadow:6px 6px 0 rgba(41,35,51,.35);
+}
+.pink-block{background:var(--pink)}
+.green-block{background:var(--green)}
+.black-block{background:#3e3c46}
+.gold-block{background:#f6c744}
+
+.events{text-align:center}
+.event-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.event-card{
+  padding:26px 22px;
+  text-align:left;
+  min-height:220px;
+}
+.event-card:nth-child(1){border-top:12px solid var(--green)}
+.event-card:nth-child(2){border-top:12px solid var(--pink)}
+.event-card:nth-child(3){border-top:12px solid #f6c744}
+
+.wishlist{
+  padding:38px;
+  text-align:center;
+  background:linear-gradient(135deg,#ffe1f1,#fff 52%,#e8ffd4);
+}
+.wishlist-btn{
+  margin:12px 0 4px;
+  background:#ffd814;
+  color:#1f1f1f;
+}
+.tiny{font-size:.85rem;color:#6a6570}
+code{background:#f1edf2;padding:2px 5px;border-radius:4px}
+
+.photo-note{padding:34px;border-left:14px solid var(--pink)}
+
+.rsvp{
+  padding:30px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  background:#f4ffdf;
+}
+.creeper{
+  width:110px;
+  height:110px;
+  background:var(--green);
+  border:7px solid var(--ink);
+  display:grid;
+  grid-template:repeat(4,1fr)/repeat(4,1fr);
+  gap:4px;
+  padding:9px;
+  flex:0 0 auto;
+}
+.creeper span{background:var(--ink)}
+.creeper span:nth-child(1){grid-area:1/1/2/2}
+.creeper span:nth-child(2){grid-area:1/4/2/5}
+.creeper span:nth-child(3){grid-area:2/2/4/4}
+.creeper span:nth-child(4){grid-area:3/1/5/2}
+.creeper span:nth-child(5){grid-area:3/4/5/5}
+
+footer{
+  text-align:center;
+  padding:28px 18px 45px;
+  font-weight:600;
+}
+
+@media (max-width:760px){
+  .hero{min-height:76vh}
+  .info-grid,.event-grid,.split-section{grid-template-columns:1fr}
+  .pixel-art{grid-template-columns:repeat(4,58px)}
+  .block{font-size:1.5rem}
+  .rsvp{align-items:flex-start}
+}
+
+@media (max-width:480px){
+  main{width:min(100% - 20px,1080px)}
+  .badge{font-size:.82rem}
+  .card,.event-card,.wishlist,.photo-note,.rsvp,.split-section{border-width:3px}
+  .split-section,.wishlist,.photo-note{padding:24px 20px}
+  .rsvp{flex-direction:column}
+}
+
+
+.wishlist-person{
+  margin:20px auto 8px;
+  padding:20px;
+  max-width:520px;
+  border:3px solid var(--ink);
+  background:white;
+}
+.wishlist-name{
+  font-size:1.5rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.wishlist-choice{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.cta.mini{
+  padding:12px 18px;
+}
+.green-choice{
+  background:var(--green);
+  color:white;
+}
+.pink-choice{
+  background:var(--pink);
+  color:white;
+}
