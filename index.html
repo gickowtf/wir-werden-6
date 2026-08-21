@@ -6,6 +6,76 @@
   <meta name="theme-color" content="#ff4fa3">
   <title>Lilith & Jonas werden 6!</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .countdown-box {
+      margin: 24px 0 0;
+      padding: 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe1f1, #ffffff 52%, #e8ffd4);
+      border: 4px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .countdown-box h2 {
+      margin-bottom: 18px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(70px, 1fr));
+      gap: 12px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .countdown-item {
+      padding: 16px 8px;
+      background: #fff;
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .countdown-number {
+      display: block;
+      font-family: "Press Start 2P", monospace;
+      font-size: clamp(1.25rem, 4vw, 2rem);
+      color: var(--green-dark);
+      line-height: 1.2;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: 8px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .rsvp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: #102718;
+    }
+
+    @media (max-width: 560px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rsvp-actions .cta {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <div class="pixel-sky" aria-hidden="true"></div>
@@ -44,6 +114,32 @@
       <a class="cta primary" href="geburtstag.ics">
         📅 Termin in Kalender eintragen
       </a>
+    </section>
+
+    <section class="countdown-box" aria-live="polite">
+      <span class="eyebrow">⏳ Der Countdown läuft</span>
+      <h2>Noch bis zur Party</h2>
+
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-days">--</span>
+          <span class="countdown-label">Tage</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-hours">--</span>
+          <span class="countdown-label">Stunden</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-minutes">--</span>
+          <span class="countdown-label">Minuten</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="countdown-seconds">--</span>
+          <span class="countdown-label">Sekunden</span>
+        </div>
+      </div>
+
+      <p id="countdown-message" class="tiny">Bis zum 02.10.2026 um 15:00 Uhr 🎉</p>
     </section>
 
     <section class="split-section costume">
@@ -138,6 +234,15 @@
         <span class="eyebrow">Wir freuen uns auf dich!</span>
         <h2>Bist du dabei? 🎉</h2>
         <p>Bitte gebt uns bis <strong>25.09.2026</strong> Bescheid.</p>
+
+        <div class="rsvp-actions">
+          <a class="cta whatsapp-btn" id="whatsapp-rsvp" href="#" target="_blank" rel="noopener noreferrer">
+            💬 Per WhatsApp Bescheid geben
+          </a>
+          <a class="cta primary" href="geburtstag.ics">
+            📅 Termin speichern
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -167,6 +272,77 @@
       title.textContent = "Geschenkideen für Lilith";
       text.textContent = "Du wurdest von Lilith eingeladen? Dann findest du hier ihre Wunschliste.";
     }
+
+    // ===== Countdown =====
+    // 02.10.2026, 15:00 Uhr in Deutschland (CEST / UTC+2)
+    const partyStart = new Date("2026-10-02T15:00:00+02:00");
+
+    const daysEl = document.getElementById("countdown-days");
+    const hoursEl = document.getElementById("countdown-hours");
+    const minutesEl = document.getElementById("countdown-minutes");
+    const secondsEl = document.getElementById("countdown-seconds");
+    const countdownMessage = document.getElementById("countdown-message");
+
+    function updateCountdown() {
+      const now = new Date();
+      let distance = partyStart.getTime() - now.getTime();
+
+      if (distance <= 0) {
+        daysEl.textContent = "0";
+        hoursEl.textContent = "0";
+        minutesEl.textContent = "0";
+        secondsEl.textContent = "0";
+        countdownMessage.textContent = "🎉 Die Party läuft – viel Spaß!";
+        return;
+      }
+
+      const day = 1000 * 60 * 60 * 24;
+      const hour = 1000 * 60 * 60;
+      const minute = 1000 * 60;
+
+      const days = Math.floor(distance / day);
+      distance %= day;
+
+      const hours = Math.floor(distance / hour);
+      distance %= hour;
+
+      const minutes = Math.floor(distance / minute);
+      distance %= minute;
+
+      const seconds = Math.floor(distance / 1000);
+
+      daysEl.textContent = days;
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ===== WhatsApp-Zusage =====
+    // HIER DEINE NUMMER EINTRAGEN:
+    // Beispiel Deutschland: 491701234567
+    // Wichtig: ohne +, ohne Leerzeichen, ohne führende 0.
+    const whatsappNumber = "491735838045";
+
+    const whatsappButton = document.getElementById("whatsapp-rsvp");
+
+    let invitedBy = "";
+    if (kind === "jonas") {
+      invitedBy = " Jonas";
+    } else if (kind === "lilith") {
+      invitedBy = " Lilith";
+    }
+
+    const whatsappText =
+      "Hallo 😊%0A%0A" +
+      "wir möchten für die Geburtstagsparty von Lilith & Jonas am 02.10.2026 zusagen." +
+      (invitedBy ? "%0AWir wurden von" + invitedBy + " eingeladen." : "") +
+      "%0A%0ALiebe Grüße";
+
+    whatsappButton.href = "https://wa.me/" + whatsappNumber + "?text=" + whatsappText;
+
   </script>
 
 </body>
