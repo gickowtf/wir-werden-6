@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wir werden 6//Kindergeburtstag//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wir-werden-6-20261002@bmar.io
+DTSTAMP:20260821T183200Z
+DTSTART;TZID=Europe/Berlin:20261002T150000
+DTEND;TZID=Europe/Berlin:20261002T180000
+SUMMARY:Lilith & Jonas werden 6! 🎉
+DESCRIPTION:Barbie × Minecraft Kostümparty mit Fotobox und Schatzsuche.
+LOCATION:Adresse steht auf der Einladung
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
