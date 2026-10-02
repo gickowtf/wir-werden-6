@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Die vier Pruefungen - Code 4559</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #241b38; background: #eee; font: 16px/1.35 Arial, sans-serif; }
+    .page { width: 210mm; min-height: 297mm; margin: 8mm auto; padding: 14mm; background: #fff; page-break-after: always; }
+    h1 { margin: 0 0 4mm; font-size: 29px; }
+    h2 { margin: 7mm 0 3mm; border-bottom: 2px solid #b67900; }
+    h3 { margin: 0 0 2mm; }
+    p, ul, ol { margin: 2mm 0 4mm; }
+    .quest { margin: 5mm 0; padding: 4mm; border: 2px solid #241b38; break-inside: avoid; }
+    .speak { padding: 3mm 4mm; border-left: 5px solid #d62986; background: #fff2f8; }
+    .code { display: flex; gap: 5mm; margin: 5mm 0; }
+    .code b { display: grid; place-items: center; width: 20mm; height: 20mm; border: 3px solid #241b38; font-size: 34px; }
+    .passes { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+    .pass { height: 128mm; padding: 7mm; border: 3px solid #241b38; break-inside: avoid; }
+    .pass h2 { margin: 0 0 4mm; border: 0; text-align: center; font-size: 21px; }
+    .name { height: 9mm; margin-bottom: 5mm; border-bottom: 2px solid #241b38; }
+    .row { display: grid; grid-template-columns: 18mm 1fr 18mm; align-items: center; gap: 4mm; margin: 4mm 0; }
+    .icon { text-align: center; font-size: 29px; }
+    .answer { width: 18mm; height: 18mm; border: 3px solid #241b38; }
+    .final { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-top: 7mm; }
+    .final div { padding: 2mm; border: 2px solid #b67900; text-align: center; font-size: 22px; }
+    .small { text-align: center; font-size: 12px; }
+    @media print { body { background: #fff; } .page { margin: 0; } }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <h1>Die vier Pruefungen von Funkelstein</h1>
+    <p><strong>Analoger Hauptplan fuer 12 Kinder, etwa 25 bis 35 Minuten</strong></p>
+    <p>Code des Zahlenschlosses:</p>
+    <div class="code"><b>4</b><b>5</b><b>5</b><b>9</b></div>
+
+    <h2>Vorbereitung</h2>
+    <ul>
+      <li>24 Minecraft-Pappkartons im Haus verstecken.</li>
+      <li>In 12 Kartons je eine grosse 3D-Symbolkarte legen. Unter den 12 Symbolen sind genau 4 Diamanten.</li>
+      <li>Fuenf rutschfeste Inseln als Lavaweg auslegen.</li>
+      <li>12 grosse Runen in genau 5 gut unterscheidbaren Form- und Farbfamilien bereitlegen.</li>
+      <li>Zahlenschloss auf <strong>4559</strong> einstellen. Vor Quest 4 stehen die ersten drei Rollen bereits auf 455, die letzte Rolle auf 7.</li>
+      <li>Eine feste Reihenfolge der Kinder fuer Quest 4 bestimmen. Lilith und Jonas kommen als Letzte.</li>
+    </ul>
+
+    <h2>Starttext</h2>
+    <p class="speak">„Lilith, Jonas und ihr mutigen Gaeste! Vier Zahlen halten diese Truhe verschlossen. Jede Pruefung verrät euch genau eine davon. Tragt sie in der richtigen Reihenfolge in euren Abenteuerpass ein. Nur wenn alle zusammenarbeiten, kann der Schatz geoeffnet werden!“</p>
+
+    <h2>Wichtige Spielregeln</h2>
+    <ul>
+      <li>Die Gruppe nennt jede gefundene Zahl gemeinsam laut.</li>
+      <li>Jedes Kind traegt jede Zahl in seinen eigenen Pass ein.</li>
+      <li>Es gibt kein Ausscheiden und keine Gewinner untereinander.</li>
+      <li>Bei der Kartonsuche werden gefundene Kartons zur Sammelstelle gebracht und erst dort gemeinsam geoeffnet.</li>
+      <li>Das Schloss wird erst nach dem zwölften Knacker-Klick am Buegel ausprobiert.</li>
+    </ul>
+  </section>
+
+  <section class="page">
+    <h1>Spielleitung</h1>
+    <div class="quest">
+      <h3>Quest 1: Die 24 Pixelkisten - Zahl 4</h3>
+      <p class="speak">„Im ganzen Haus sind 24 Pixelkisten verschwunden. Manche sind leer, andere bewachen magische Zeichen. Bringt alle Kisten zur Sammelstelle. Danach finden wir heraus, wie viele Diamanten sich darin verstecken!“</p>
+      <p><strong>Ablauf:</strong> Immer zwei Kinder bilden ein Suchteam. Jedes Team soll gemeinsam vier Kartons zur Sammelstelle bringen. Erst wenn alle 24 da sind, werden sie reihum geoeffnet. Die zwölf Symbole werden nach Formen sortiert. Die Gruppe zaehlt die Diamanten: <strong>4</strong>.</p>
+      <p><strong>Warum so:</strong> Durch das Oeffnen an der Sammelstelle werden leere Kartons nicht zum Misserfolg einzelner Kinder. Jedes Kind darf mindestens einen Karton oeffnen.</p>
+      <p><strong>Hilfe:</strong> Gleiche Symbole nebeneinanderlegen. Falls ein Karton fehlt, nach kurzer Suche sagen: „Die Truhe spuert das letzte Zeichen auch so“, und mit den gefundenen Symbolen fortfahren.</p>
+    </div>
+
+    <div class="quest">
+      <h3>Quest 2: Der Boden ist Lava - Zahl 5</h3>
+      <p class="speak">„Die Pixelwelt ist zu Glitzerlava geworden! Ueberquert sie auf den sicheren Inseln, holt am Ende einen unsichtbaren Zauberfunken und bringt ihn wieder zurueck. Wie viele Inseln haben euch gerettet?“</p>
+      <p><strong>Ablauf:</strong> Die Kinder gehen einzeln oder paarweise ueber die fuenf Inseln hin und wieder zurueck. An der Wendestelle klatschen sie in die Haende, um den Zauberfunken aufzunehmen. Danach werden nur die verschiedenen Inseln gezaehlt, nicht Hin- und Rueckweg: <strong>5</strong>.</p>
+      <p><strong>Moderationssatz:</strong> „Ihr habt jede Insel zweimal betreten. Aber wie viele Inseln liegen wirklich auf dem Boden?“</p>
+      <p><strong>Sicherheit:</strong> Inseln mit Malerkrepp befestigen, kurze Abstaende, kein Springzwang, niemals auf Moebel steigen.</p>
+    </div>
+
+    <div class="quest">
+      <h3>Quest 3: Der Rat der Runen - Zahl 5</h3>
+      <p class="speak">„Jede Rune sucht ihre magische Familie. Betrachtet Form und Farbe genau. Findet die Kinder mit passenden Runen und bildet gemeinsam eure Runenkreise. Wie viele verschiedene Familien sind erwacht?“</p>
+      <p><strong>Ablauf:</strong> Jedes Kind bekommt genau eine Rune. Die Kinder vergleichen Formen und Farben und sortieren sich selbststaendig. Jede Familie bildet einen kleinen Kreis und hebt ihre Runen hoch. Gemeinsam werden die Gruppen gezaehlt: <strong>5</strong>.</p>
+      <p><strong>Vorbereitung:</strong> Jede der fuenf Familien muss mindestens einmal vorkommen. Die Familien sollen nicht nur an der Farbe, sondern auch an einer erhabenen Form erkennbar sein.</p>
+      <p><strong>Hilfe:</strong> Fuenf passende Musterplaetze auf den Boden legen. Kinder koennen ihre Rune direkt mit den Mustern vergleichen.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <h1>Quest 4 und Finale</h1>
+    <div class="quest">
+      <h3>Quest 4: Die Schlossknacker - Zahl 9</h3>
+      <p class="speak">„Drei Schlosszahlen kennen wir schon: vier, fuenf, fuenf. Doch die letzte Zahlenrolle braucht die Kraft von allen Schlossknackern. Jeder darf sie genau einen Klick weiterdrehen. Erst wenn alle dran waren, lesen wir die letzte Zahl!“</p>
+      <p><strong>Vorbereitung:</strong> Erste drei Rollen auf <strong>455</strong>, letzte Rolle auf <strong>7</strong>. Bei genau zwölf Kindern ergeben zwölf einzelne Vorwaerts-Klicks: 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, <strong>9</strong>.</p>
+      <p><strong>Ablauf:</strong> Jedes Kind dreht die letzte Rolle genau einen Rastschritt in derselben Richtung. Ein Erwachsener zeigt die Drehrichtung und zaehlt die Kinder, verrät aber keine Zahl. Der Buegel bleibt bis zum letzten Kind unangetastet. Danach lesen alle die letzte Ziffer: <strong>9</strong>.</p>
+      <p><strong>Falls nicht genau 12 Kinder mitmachen:</strong> Startziffer berechnen als <strong>9 minus Kinderzahl, modulo 10</strong>. Beispiele: 10 Kinder starten bei 9, 11 Kinder bei 8, 12 Kinder bei 7. Alternativ drehen fehlende Kinder als Gruppe die restlichen Klicks.</p>
+      <p><strong>Mechanik-Fallback:</strong> Falls die Rolle schlecht rastet, darf jedes Kind sie einmal beruehren und gemeinsam „Klick!“ rufen. Der Erwachsene stellt danach unauffaellig die 9 ein.</p>
+    </div>
+
+    <h2>Finale</h2>
+    <p class="speak">„Vier Pruefungen sind geschafft! Haltet eure Paesse hoch und sprecht den Code gemeinsam: vier - fuenf - fuenf - neun! Lilith und Jonas, oeffnet zusammen den Schatz von Funkelstein!“</p>
+    <p>Lilith haelt das Schloss, Jonas loest den Buegel; danach tauschen sie beim Oeffnen des Deckels die Rollen oder heben ihn gemeinsam. Alle anderen zaehlen: „Drei, zwei, eins, Schatz!“</p>
+
+    <h2>Unauffaellige Notloesungen</h2>
+    <ul>
+      <li>Fehlender Karton: Suche beenden und mit den vorhandenen 12 Symbolkarten weitermachen.</li>
+      <li>Falsche Inselzahl: Inseln gemeinsam antippen und deutlich nur einmal zaehlen.</li>
+      <li>Runengruppen unklar: Fuenf Musterplaetze auslegen.</li>
+      <li>Schloss verstellt: Spannung aus der Situation nehmen, Kinder den richtigen Code rufen lassen und das Schloss durch einen Erwachsenen einstellen.</li>
+      <li>Schloss klemmt: Ersatzschluessel oder mechanische Notoeffnung vorher griffbereit und fuer Kinder unsichtbar halten.</li>
+    </ul>
+  </section>
+
+  <div id="passes"></div>
+  <script>
+    const pass = `
+      <div class="pass">
+        <h2>Mein Abenteuerpass</h2>
+        <div>Name:</div><div class="name"></div>
+        <div class="row"><div class="icon">◆</div><div>Pixelkisten</div><div class="answer"></div></div>
+        <div class="row"><div class="icon">▰</div><div>Lava-Inseln</div><div class="answer"></div></div>
+        <div class="row"><div class="icon">✦</div><div>Runenfamilien</div><div class="answer"></div></div>
+        <div class="row"><div class="icon">⌾</div><div>Schlossknacker</div><div class="answer"></div></div>
+        <div class="final"><div>◆</div><div>▰</div><div>✦</div><div>⌾</div></div>
+        <p class="small">Alle vier Zahlen ergeben den Schatzcode.</p>
+      </div>`;
+    const root = document.getElementById('passes');
+    for (let page = 0; page < 6; page++) {
+      root.insertAdjacentHTML('beforeend', `<section class="page passes">${pass}${pass}</section>`);
+    }
+  </script>
+</body>
+</html>
